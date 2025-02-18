@@ -11,7 +11,7 @@
         }
         body {
             margin: 0;
-            font-family: 'MyFont';
+            font-family: 'MyFont', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             background-color: #222;
             color: #fff;
             display: flex;
@@ -20,7 +20,6 @@
             flex-direction: column;
             min-height: 100vh;
         }
-
         header {
             background-color: #1a1a1a;
             padding: 20px;
@@ -28,28 +27,36 @@
             border-bottom: 4px solid #588e94;
             width: 100%;
             box-sizing: border-box;
+            position: relative;
         }
-
         header h1 {
             margin: 0;
-            font-size: 30px;
+            font-size: 2rem;
         }
-
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
         header nav {
             margin-top: 10px;
         }
-
         header nav a {
             color: #66ccff;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 20px;
+            font-size: 1.2rem;
+            padding: 10px;
         }
-
         header nav a:hover {
             text-decoration: underline;
         }
-
         .about-container {
             width: 80%;
             max-width: 800px;
@@ -57,23 +64,22 @@
             box-sizing: border-box;
             text-align: center;
         }
-
         .about-container h2 {
-            font-size: 28px;
+            font-size: 1.75rem;
             color: #ffcc00;
         }
-
         .about-container p {
-            font-size: 16px;
+            font-size: 1rem;
             margin: 10px 0;
             line-height: 1.6;
         }
-
-        .about-container a{
+        .about-container a {
             color: #1aff00;
             text-decoration: none;
         }
-
+        .about-container a:hover {
+            text-decoration: underline;
+        }
         footer {
             background-color: #1a1a1a;
             color: #fff;
@@ -84,28 +90,56 @@
             box-sizing: border-box;
             margin-top: auto;
         }
-
         footer a {
             color: #1aff00;
             text-decoration: none;
             margin: 0 10px;
-            font-size: 16px;
+            font-size: 1rem;
         }
-
         footer a:hover {
             text-decoration: underline;
         }
-
         footer p {
             margin: 14px 0 0;
-            font-size: 14px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            header nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+            header nav.active {
+                display: flex;
+            }
+            header nav a {
+                margin: 5px 0;
+                font-size: 1rem;
+            }
+            .about-container {
+                width: 95%;
+            }
+            footer a {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Khopesh</h1>
-        <nav>
+        <button class="menu-toggle">☰</button>
+        <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
         </nav>
@@ -115,7 +149,7 @@
         <h2>About Us</h2>
         <p>Khopesh is an Indian indie game studio specializing in 2D-style games for computers and the internet.</p>
         <p>Since our founding in 2024, we have successfully launched more than four games.</p>
-        <p>Our games prioritize enjoyable 2D gampeplay with a classic aesthetic, vibrant visuals, challenging puzzles that simulate the mind.</p>
+        <p>Our games prioritize enjoyable 2D gameplay with a classic aesthetic, vibrant visuals, and challenging puzzles that stimulate the mind.</p>
         <p>Our games are developed using the <a href="https://godotengine.org/">Godot</a> game engine.</p>
     </div>
 
@@ -126,5 +160,12 @@
         </div>
         <p>Made in India © 2025 Khopesh</p>
     </footer>
+
+    <script>
+        // Toggle mobile navigation menu
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
