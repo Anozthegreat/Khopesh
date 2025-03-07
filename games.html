@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khopesh - retro gaming</title>
+    <link rel="stylesheet" href="games.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+            
+            menuToggle.addEventListener("click", function() {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+    <style>
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            margin: 5px;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Khopesh</div>
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="featured">
+        <h2>Games and more</h2>
+        <div class="game-grid">
+            <div class="game-card">
+                <img src="https://img.itch.zone/aW1hZ2UvMzE3OTgyOC8xODk4ODMxMi5wbmc=/original/UsqAbr.png" alt="Game 1">
+                <h3>Galaxy Vanguard</h3>
+                <h3><a href="https://lord-khopesh.itch.io/galactic-vanguard">Get it on Itch.io</a></h3>
+            </div>
+            <div class="game-card">
+                <img src="https://img.itch.zone/aW1hZ2UvMzI1MjkyOC8xOTQyMjI2OS5wbmc=/347x500/ZQ1kde.png" alt="Game 2">
+                <h3>BlackJack 21</h3>
+                <h3><a href="https://lord-khopesh.itch.io/blackjack-21">Get it on Itch.io</a></h3>
+            </div>
+            <div class="game-card">
+                <img src="https://img.itch.zone/aW1hZ2UvMjkyODA0Mi8xNzU0NDc3Mi5qcGc=/347x500/7ww2aK.jpg" alt="Game 3">
+                <h3>The Mansion</h3>
+                <h3><a href="https://lord-khopesh.itch.io/the-mansion">Get it on Itch.io</a></h3>
+            </div>
+        </div>
+        <div class="game-grid">
+            <div class="game-card">
+                <img src="https://img.itch.zone/aW1hZ2UvMjk1MTcxMS8xNzY2NDc0OS5wbmc=/794x1000/SPi4Rz.png" alt="Game 1">
+                <h3>Godot FPS controller</h3>
+                <h3><a href="https://lord-khopesh.itch.io/fps-player-controller">Get it on Itch.io</a></h3>
+            </div>
+            <div class="game-card">
+                <img src="https://img.itch.zone/aW1nLzE5MjM4MTc0LmpwZWc=/347x500/hWFn5n.jpeg" alt="Game 2">
+                <h3>Godot Splashscreen Manager</h3>
+                <h3><a href="https://lord-khopesh.itch.io/godot-splashscreen-manager-43">Get it on Itch.io</a></h3>
+            </div>
+            <div class="game-card">
+                <img src="https://img.itch.zone/aW1nLzE5MTYyNDI1LmpwZWc=/315x250%23c/V1FSFz.jpeg" alt="Game 3">
+                <h3>Audio SFX sound pack</h3>
+                <h3><a href="https://lord-khopesh.itch.io/audio-free-18-sfx-sounds">Get it on Itch.io</a></h3>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Khopesh. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
