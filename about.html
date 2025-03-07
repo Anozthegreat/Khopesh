@@ -3,169 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khopesh - About</title>
+    <title>Khopesh - retro gaming</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+            
+            menuToggle.addEventListener("click", function() {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
     <style>
-        @font-face {
-            font-family: 'MyFont';
-            src: url('ConsolaMono-Bold.ttf') format('truetype');
-        }
-        body {
-            margin: 0;
-            font-family: 'MyFont', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            background-color: #222;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: #1a1a1a;
-            padding: 20px;
+        h2 {
+            font-size: 1.5em;
             text-align: center;
-            border-bottom: 4px solid #588e94;
-            width: 100%;
-            box-sizing: border-box;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        header nav {
-            margin-top: 10px;
-        }
-        header nav a {
-            color: #66ccff;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2rem;
-            padding: 10px;
-        }
-        header nav a:hover {
-            text-decoration: underline;
-        }
-        .about-container {
-            width: 80%;
-            max-width: 800px;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .about-container h2 {
-            font-size: 1.75rem;
-            color: #ffcc00;
-        }
-        .about-container p {
-            font-size: 1rem;
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-        .about-container a {
-            color: #1aff00;
-            text-decoration: none;
-        }
-        .about-container a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-top: 4px solid #588e94;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: auto;
-        }
-        footer a {
-            color: #1aff00;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1rem;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        footer p {
-            margin: 14px 0 0;
-            font-size: 0.9rem;
+            font-weight: bold;
         }
 
-        /* Mobile Responsive Styles */
+        p{  
+            font-size: 1.1em;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        p a{
+            color: rgb(26, 255, 0);
+        }
+
+        p a:hover{
+            color: rgb(255, 72, 0);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            margin: 5px;
+        }
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
             .menu-toggle {
-                display: block;
-            }
-            header nav {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                margin-top: 10px;
-            }
-            header nav.active {
                 display: flex;
             }
-            header nav a {
-                margin: 5px 0;
-                font-size: 1rem;
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
             }
-            .about-container {
-                width: 95%;
+            .nav-links.active {
+                display: flex;
             }
-            footer a {
-                display: block;
+            .nav-links li {
                 margin: 10px 0;
             }
+        }
+        .about-container {
+            max-width: 1170px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #512435;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Khopesh</h1>
-        <button class="menu-toggle">☰</button>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+        <nav>
+            <div class="logo">Khopesh</div>
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </nav>
     </header>
-
-    <div class="about-container">
-        <h2>About Us</h2>
-        <p>Khopesh is an Indian indie game studio specializing in 2D-style games for computers and the internet.</p>
-        <p>Since our founding in 2024, we have successfully launched more than four games.</p>
-        <p>Our games prioritize enjoyable 2D gameplay with a classic aesthetic, vibrant visuals, and challenging puzzles that stimulate the mind.</p>
-        <p>Our games are developed using the <a href="https://godotengine.org/">Godot</a> game engine.</p>
-    </div>
-
+    
+    <main>
+        <section class="about-container">
+            <h2>About</h2>
+            <br>
+            <p>Khopesh is an Indian indie game studio specializing in 2D-style games for computers and the internet. Since our founding in 2024, we have successfully launched more than four games.
+                Our games prioritize enjoyable 2D gameplay with a classic aesthetic, vibrant visuals, and challenging puzzles that stimulate the mind.</p>
+            <br>
+            <p>Khopesh is a dedicated platform for retro gaming enthusiasts. We strive to bring back the nostalgic experience of classic games, offering a space where gamers can relive their favorite moments and discover timeless classics.</p>
+            <br>
+            <p>With a passion for pixel art and old-school mechanics, Khopesh delivers an authentic gaming experience while embracing modern enhancements. Whether you are a seasoned player or a newcomer, there's always something exciting to explore.</p>
+            <br>
+            <p>Our games are developed using the <a href="https://godotengine.org/">Godot</a> and <a href="https://www.renpy.org/">Renpy</a> game engines.</p>
+        </section>
+    </main>
+    
     <footer>
-        <div>
-            <a href="https://www.youtube.com/@LordKhopesh">YouTube</a>
-            <a href="https://lord-khopesh.itch.io/">Itch.io</a>
-        </div>
-        <p>Made in India © 2025 Khopesh</p>
+        <p>&copy; 2025 Khopesh. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        // Toggle mobile navigation menu
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
